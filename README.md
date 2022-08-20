@@ -30,5 +30,14 @@ rust-analyzer
 
 CodeLLDB
 
+https://doc.rust-jp.rs/book-ja/ch04-01-what-is-ownership.html
 
+Rustの中心的な機能は、所有権です。
+
+
+所有権規則
+
+- Rustの各値は、所有者と呼ばれる変数と対応している。
+- いかなる時も所有者は一つである。
+- 所有者がスコープから外れたら、値は破棄される。
 
