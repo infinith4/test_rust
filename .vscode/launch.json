@@ -16,7 +16,7 @@
             "name": "(OSX) Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceRoot}/variables/target/debug/variables",
+            "program": "${workspaceRoot}/functions/target/debug/functions",
             "args": [],
             "cwd": "${workspaceRoot}",
         }
