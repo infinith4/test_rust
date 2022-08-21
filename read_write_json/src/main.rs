@@ -10,7 +10,7 @@ struct Memo {
     client_secret: String,
     mail_address: String,
     password_with_security_token: String,
-    id: isize,
+    //id: isize,
     body: String,
     star: bool,
 }
@@ -34,14 +34,16 @@ fn write_file(body: String) -> std::io::Result<()> {
         client_secret: "client_secret".to_string(),
         mail_address: "mail_address".to_string(),
         password_with_security_token: "password_with_security_token".to_string(),
+        //id: 100,
         body: body,
         star: true,
     };
 
-    let mut memos = HashMap::new();
-    memos.insert(memo.id.to_string(), memo);
+    //let mut memos = HashMap::new();
+    //memos.insert(memo.id.to_string(), memo);
 
-    let memos_text = serde_json::to_string(&memos).unwrap();
+    let memos_text = serde_json::to_string(&memo).unwrap();
+    //let memos_text = serde_json::to_string(&memos).unwrap();
     println!("memos: {}", &memos_text);
     write!(&file, "{}", memos_text)?;
 
