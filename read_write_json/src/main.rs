@@ -6,6 +6,10 @@ use std::io::BufReader;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Memo {
+    client_id: String,
+    client_secret: String,
+    mail_address: String,
+    password_with_security_token: String,
     id: isize,
     body: String,
     star: bool,
@@ -26,7 +30,10 @@ fn write_file(body: String) -> std::io::Result<()> {
     println!("file: {:#?}", file);
 
     let memo = Memo {
-        id: 100,
+        client_id: "client_id".to_string(),
+        client_secret: "client_secret".to_string(),
+        mail_address: "mail_address".to_string(),
+        password_with_security_token: "password_with_security_token".to_string(),
         body: body,
         star: true,
     };
