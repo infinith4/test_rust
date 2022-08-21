@@ -16,7 +16,7 @@
             "name": "(OSX) Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceRoot}/functions/target/debug/functions",
+            "program": "${workspaceRoot}/read_write_json/target/debug/read_write_json",
             "args": [],
             "cwd": "${workspaceRoot}",
         }
