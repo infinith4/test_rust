@@ -1,7 +1,7 @@
 
 //https://yu-nix.com/archives/rust-box/#Rust%E3%81%AEBox%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9
 //https://doc.rust-jp.rs/rust-by-example-ja/std/box.html
-
+//巨大なバイトを扱いたい場合はBoxを使うのが向いている
 use std::mem;
 
 #[allow(dead_code)]
