@@ -1,23 +1,14 @@
-use hello::rota::function as my_function;
-fn function() {
-    println!("demo `function()`");
-}
-mod hello {
-    pub mod rota {
-        pub fn function() {
-            println!("demo `hello::rota`");
-        }
-    }
-}
 
 mod test_mod;
+use hello::rota::function as my_function;
 
 fn main() {
-    let testStructure : Test::TestStructure= {
-        aaa : String.from("aaaa"),
-        bbb: String.from("bbbb")
-    }
-    println!("{:?}",testStructure);
+    let testStructure = test_mod::Test::TestStructure {
+        aaa : "aaaa".to_string(),
+        bbb: "bbbb".to_string()
+    };
+
+    println!("{:?}", testStructure);
     my_function();
 
     println!("Coming");

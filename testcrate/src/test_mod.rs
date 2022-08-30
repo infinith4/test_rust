@@ -1,6 +1,7 @@
 pub mod Test{
+    #[derive(Debug)]
     pub struct TestStructure{
-        aaa: String,
-        bbb: String
+        pub aaa: String,
+        pub bbb: String
     }
 }
