@@ -95,6 +95,7 @@ fn main() {
         hockey team in the NHL.",
         ),
     };
+    notify(&article);
     notify_another(&article);
 }
 
