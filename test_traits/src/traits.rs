@@ -51,7 +51,9 @@ fn get_price<T: Fruits>(fruits: T) {
 }
 
 trait Summary {
-    fn summarize(&self) -> String;
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
 }
 
 struct NewsArticle {
@@ -62,9 +64,9 @@ struct NewsArticle {
 }
 
 impl Summary for NewsArticle {
-    fn summarize(&self) -> String {
-        format!("{}, by {} ({})", self.headline, self.author, self.location)
-    }
+    // fn summarize(&self) -> String {
+    //     format!("{}, by {} ({})", self.headline, self.author, self.location)
+    // }
 }
 
 struct Tweet {
