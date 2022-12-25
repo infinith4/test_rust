@@ -44,6 +44,8 @@ pub fn run() {
 
     println!("{}", article.summarize());
     notify(&article);
+    notify_another(&article);
+    //notify_another(&tweet);
 }
 
 fn get_price<T: Fruits>(fruits: T) {
@@ -68,6 +70,7 @@ impl Summary for NewsArticle {
     //     format!("{}, by {} ({})", self.headline, self.author, self.location)
     // }
 }
+impl Message for NewsArticle {}
 
 struct Tweet {
     username: String,
@@ -84,4 +87,15 @@ impl Summary for Tweet {
 
 fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
+}
+
+trait Message {
+    fn message(&self) -> String {
+        String::from("Message")
+    }
+}
+
+fn notify_another(item: &(impl Summary + Message)) {
+    println!("breaking news! {}", item.summarize());
+    println!("message! {}", item.message());
 }
