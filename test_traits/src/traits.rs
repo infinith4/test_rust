@@ -31,6 +31,19 @@ pub fn run() {
     };
 
     println!("1 new tweet: {}", tweet.summarize());
+
+    let article = NewsArticle {
+        headline: String::from("penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best ¥
+        hockey team in the NHL.",
+        ),
+    };
+
+    println!("{}", article.summarize());
+    notify(&article);
 }
 
 fn get_price<T: Fruits>(fruits: T) {
@@ -65,4 +78,8 @@ impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
+}
+
+fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
 }
